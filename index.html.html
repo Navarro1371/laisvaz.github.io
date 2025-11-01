@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laís Vaz — Portfólio</title>
+  <meta name="description" content="Portfólio bilíngue (PT/EN) de Laís Vaz — Canva, social media, banners, carrossel, logotipo e marketing digital. Agende sua consultoria por WhatsApp ou E-mail." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 900:'#0b1226', 800:'#0f1b3f', 700:'#14275d', 600:'#1c3a8a' },
+            accent: { 400:'#ffd84d', 500:'#ffc933', 600:'#ffbf00' },
+          },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,.18)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{background:linear-gradient(135deg,#0b1226,#14275d);color:white}
+    .card{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
+    .btn{transition:all .25s ease}
+
+    /* Spotlight VERDE escuro, pequeno e sutil */
+    #spotlight{position:fixed; inset:0; pointer-events:none; z-index:40; mix-blend-mode:screen}
+    :root{--sx:50vw; --sy:50vh}
+    #spotlight::before{content:""; position:absolute; inset:0; background:
+      radial-gradient(50px circle at var(--sx) var(--sy), rgba(46,125,50,.12) 0%, rgba(46,125,50,.05) 45%, rgba(46,125,50,0) 70%);
+      filter: blur(.3px);
+    }
+    .hairline{border-color:rgba(255,255,255,.12)}
+
+    /* Animações seguras */
+    .reveal{opacity:1; transform:none}
+    .js .reveal{opacity:0; transform:translateY(10px)}
+    .js .reveal.visible{opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease}
+  </style>
+</head>
+<body class="font-sans">
+  <div id="spotlight"></div>
+
+  <header class="sticky top-0 bg-brand-800/70 backdrop-blur border-b border-white/10 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+      <a href="#home" class="font-bold text-xl text-accent-500">Laís Vaz</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#portfolio" class="hover:text-accent-500">Portfólio</a>
+        <a href="#projects" class="hover:text-accent-500">Projetos</a>
+        <a href="#catalogs" class="hover:text-accent-500">Catálogos</a>
+        <a href="#about" class="hover:text-accent-500">Sobre</a>
+      </nav>
+      <div class="flex items-center gap-3 text-sm">
+        <span id="clock" class="px-2 py-1 rounded border border-white/10 text-slate-200" title="Horário de Brasília"></span>
+        <button id="langToggle" class="px-3 py-1.5 rounded border border-white/10 hover:bg-white/5">PT • EN</button>
+        <a href="#booking" class="hidden sm:inline-block px-4 py-2 rounded-xl bg-accent-500 text-black font-semibold shadow-soft">Agendar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="max-w-7xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <p class="text-accent-500 font-semibold mb-2 text-sm">Disponível para projetos • Upwork</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Design criativo e funcional para negócios e criadores de conteúdo.</h1>
+      <p class="text-slate-200 mb-6">Canva e artes visuais: banners, stories, carrosséis, logotipos e materiais para marketing digital.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#portfolio" class="px-5 py-3 rounded-xl bg-accent-500 text-black font-semibold hover:opacity-90 btn">Ver portfólio</a>
+        <a href="https://wa.me/559991712084?text=Oi%20La%C3%ADs!%20Quero%20um%20agendamento." target="_blank" class="px-5 py-3 rounded-xl border border-white/10 font-semibold hover:bg-white/5 btn">WhatsApp</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="rounded-3xl overflow-hidden card shadow-soft">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&auto=format&fit=crop&w=1400" alt="Mockup de artes e branding" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="max-w-7xl mx-auto px-4 py-10">
+    <div class="reveal mb-6 flex items-end justify-between">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-accent-500">Trabalhos em destaque</h2>
+        <p class="text-slate-300">Seleção de peças recentes. Para o portfólio completo, fale comigo no WhatsApp.</p>
+      </div>
+      <div class="hidden md:flex gap-2 text-sm">
+        <button class="filter-btn px-3 py-1.5 rounded-lg border hairline" data-filter="all">Tudo</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg border hairline" data-filter="social">Social</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg border hairline" data-filter="banner">Banner</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg border hairline" data-filter="carousel">Carrossel</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg border hairline" data-filter="logo">Logo</button>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="work-card group rounded-2xl overflow-hidden card reveal" data-tags="social banner">
+        <img src="https://picsum.photos/id/1011/800/450" alt="Pacote social media" class="h-56 w-full object-cover group-hover:scale-[1.02] transition"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Pacote Social Media (Canva)</h3>
+          <p class="text-sm text-slate-300">Posts, stories e capas otimizadas para Instagram, Facebook e LinkedIn.</p>
+          <button class="mt-2 text-accent-500 text-sm underline open-modal" data-title="Pacote Social Media" data-desc="Pacote com artes mensais, identidade visual coesa e CTAs claros.">Ver projeto</button>
+        </div>
+      </article>
+      <article class="work-card group rounded-2xl overflow-hidden card reveal" data-tags="banner carousel">
+        <img src="https://picsum.photos/id/1039/800/450" alt="Carrossel e banner" class="h-56 w-full object-cover group-hover:scale-[1.02] transition"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Carrossel + Banner</h3>
+          <p class="text-sm text-slate-300">Sequência de 5–7 slides com CTA e variações para stories.</p>
+          <button class="mt-2 text-accent-500 text-sm underline open-modal" data-title="Carrossel + Banner" data-desc="Carrossel com storytelling leve e versão para stories.">Ver projeto</button>
+        </div>
+      </article>
+      <article class="work-card group rounded-2xl overflow-hidden card reveal" data-tags="logo">
+        <img src="https://picsum.photos/id/1059/800/450" alt="Identidade visual" class="h-56 w-full object-cover group-hover:scale-[1.02] transition"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Logo & Identidade</h3>
+          <p class="text-sm text-slate-300">Logo minimalista, paleta de cores e fontes com guia básico de uso.</p>
+          <button class="mt-2 text-accent-500 text-sm underline open-modal" data-title="Logo & Identidade" data-desc="Explorações visuais, grade e aplicações em mockups.">Ver projeto</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Catalogs -->
+  <section id="catalogs" class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="reveal text-3xl md:text-4xl font-extrabold mb-6 text-accent-500">Catálogos</h2>
+    <p class="reveal text-slate-300 mb-6">Materiais ricos para vendas, lançamentos e portfólios de produtos.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card rounded-2xl overflow-hidden reveal">
+        <img src="https://picsum.photos/id/1015/1200/500" class="w-full h-44 object-cover" alt="Catálogo genérico 1"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Catálogo Fashion</h3>
+          <p class="text-sm text-slate-300 mb-3">Lookbook digital com chamada para WhatsApp.</p>
+          <div class="flex gap-3 text-sm">
+            <a class="underline text-accent-500" href="#">Ver online</a>
+            <a class="underline text-accent-500" href="#">Baixar PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="card rounded-2xl overflow-hidden reveal">
+        <img src="https://picsum.photos/id/1041/1200/500" class="w-full h-44 object-cover" alt="Catálogo genérico 2"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Catálogo Tech</h3>
+          <p class="text-sm text-slate-300 mb-3">Apresentação de produtos com especificações.</p>
+          <div class="flex gap-3 text-sm">
+            <a class="underline text-accent-500" href="#">Ver online</a>
+            <a class="underline text-accent-500" href="#">Baixar PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="card rounded-2xl overflow-hidden reveal">
+        <img src="https://picsum.photos/id/1035/1200/500" class="w-full h-44 object-cover" alt="Catálogo genérico 3"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Catálogo Gourmet</h3>
+          <p class="text-sm text-slate-300 mb-3">Menu visual com preços e destaques.</p>
+          <div class="flex gap-3 text-sm">
+            <a class="underline text-accent-500" href="#">Ver online</a>
+            <a class="underline text-accent-500" href="#">Baixar PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-5 gap-8 items-center">
+      <div class="md:col-span-2 order-2 md:order-1 reveal">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-accent-500">Sobre mim</h2>
+        <p class="text-slate-200 mb-4">Sou Laís, designer focada em social media e materiais promocionais no Canva. Visual limpo e profissional.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#booking" class="px-4 py-2 rounded-xl bg-accent-500 text-black font-semibold">Agendar consultoria</a>
+        </div>
+      </div>
+      <div class="md:col-span-3 order-1 md:order-2 reveal">
+        <div class="rounded-3xl overflow-hidden card p-6 flex justify-center">
+          <img src="https://picsum.photos/id/1005/600/600" alt="Retrato" class="w-40 h-40 rounded-2xl object-cover mx-auto"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONE FORM: Agendamento (WhatsApp OU E-mail) -->
+  <section id="booking" class="max-w-7xl mx-auto px-4 py-12 reveal">
+    <div class="rounded-3xl card p-8">
+      <h2 class="text-3xl font-extrabold mb-3 text-accent-500">Agendar atendimento</h2>
+      <p class="text-slate-200 mb-6">Preencha e escolha: <strong>Agendar por WhatsApp</strong> ou <strong>Agendar por e-mail</strong>.</p>
+      <form id="bookingForm" class="grid md:grid-cols-2 gap-6">
+        <div class="grid gap-4">
+          <div>
+            <label class="text-sm font-medium">Seu nome</label>
+            <input id="bName" class="mt-1 w-full rounded-xl border border-white/10 bg-transparent px-3 py-2 text-white placeholder-slate-400" placeholder="Ex.: Ana" required />
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-sm font-medium">Data</label>
+              <input id="bDate" type="date" class="mt-1 w-full rounded-xl border border-white/10 bg-transparent px-3 py-2 text-white" required />
+            </div>
+            <div>
+              <label class="text-sm font-medium">Horário</label>
+              <input id="bTime" type="time" class="mt-1 w-full rounded-xl border border-white/10 bg-transparent px-3 py-2 text-white" required />
+            </div>
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <label class="text-sm font-medium">Serviço</label>
+            <select id="bService" class="mt-1 w-full rounded-xl border border-white/10 bg-transparent px-3 py-2 text-white">
+              <option class="bg-brand-900" value="Social Media (Canva)">Social Media (Canva)</option>
+              <option class="bg-brand-900" value="Banner / Stories">Banner / Stories</option>
+              <option class="bg-brand-900" value="Carrossel">Carrossel</option>
+              <option class="bg-brand-900" value="Logo">Logo</option>
+              <option class="bg-brand-900" value="Marketing Digital">Marketing Digital</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm font-medium">Mensagem / briefing</label>
+            <textarea id="bBrief" rows="4" class="mt-1 w-full rounded-xl border border-white/10 bg-transparent px-3 py-2 text-white placeholder-slate-400" placeholder="Conte os objetivos, referências e tamanhos..."></textarea>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button type="button" id="btnBookingWhats" class="px-5 py-3 rounded-xl bg-accent-500 text-black font-semibold">Agendar por WhatsApp</button>
+            <button type="button" id="btnBookingEmail" class="px-5 py-3 rounded-xl border border-white/10 text-white font-semibold hover:bg-white/10">Agendar por e-mail</button>
+          </div>
+          <p id="bookingStatus" class="text-sm text-accent-500 hidden">Agendamento preparado! Escolha WhatsApp ou E-mail.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="max-w-7xl mx-auto px-4 py-8 text-sm text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/10">
+    <p>© <span id="year"></span> <span class="font-semibold">Laís Vaz</span>. <span>Todos os direitos reservados.</span></p>
+    <div class="flex items-center gap-3">
+      <a href="https://www.upwork.com/" target="_blank" class="hover:text-accent-500">Upwork</a>
+      <a href="https://www.instagram.com/" target="_blank" class="hover:text-accent-500">Instagram</a>
+      <a href="https://www.behance.net/" target="_blank" class="hover:text-accent-500">Behance</a>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center p-4">
+    <div class="card max-w-lg w-full rounded-2xl p-6">
+      <div class="flex items-start justify-between gap-4 mb-3">
+        <h3 id="modalTitle" class="text-xl font-semibold">Título</h3>
+        <button id="modalClose" class="text-slate-300 hover:text-white">✕</button>
+      </div>
+      <p id="modalDesc" class="text-slate-300"></p>
+    </div>
+  </div>
+
+  <script>
+    // JS ativo
+    document.documentElement.classList.add('js');
+
+    // Ano
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Relógio (America/Sao_Paulo)
+    function updateClock(){
+      try{
+        const fmtPT = new Intl.DateTimeFormat('pt-BR',{ timeZone:'America/Sao_Paulo', hour:'2-digit', minute:'2-digit' });
+        const fmtEN = new Intl.DateTimeFormat('en-US',{ timeZone:'America/Sao_Paulo', hour:'2-digit', minute:'2-digit' });
+        const nowPT = fmtPT.format(new Date());
+        const nowEN = fmtEN.format(new Date());
+        const lang = localStorage.getItem('lang') || 'pt';
+        const labelPT = 'Horário de Brasília:';
+        const labelEN = 'Brasília time:';
+        document.getElementById('clock').textContent = (lang==='pt'?labelPT:labelEN)+' '+(lang==='pt'?nowPT:nowEN);
+      }catch(e){ document.getElementById('clock').textContent = '' }
+    }
+    setInterval(updateClock, 1000); updateClock();
+
+    // Spotlight segue o mouse (verde)
+    const root = document.documentElement;
+    window.addEventListener('mousemove',(e)=>{ root.style.setProperty('--sx', e.clientX+'px'); root.style.setProperty('--sy', e.clientY+'px'); },{passive:true});
+
+    // Filtros do portfólio
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.work-card');
+    buttons.forEach(btn=>btn.addEventListener('click',()=>{
+      const tag = btn.dataset.filter;
+      buttons.forEach(b=>b.classList.remove('bg-accent-500','text-black'));
+      btn.classList.add('bg-accent-500','text-black');
+      cards.forEach(c=>{ c.classList.toggle('hidden', tag!=='all' && !c.dataset.tags.includes(tag)); });
+    }));
+
+    // Modal
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeBtn = document.getElementById('modalClose');
+    document.querySelectorAll('.open-modal').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        modalTitle.textContent = btn.dataset.title || 'Projeto';
+        modalDesc.textContent = btn.dataset.desc || '';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      })
+    });
+    closeBtn.addEventListener('click', ()=>{ modal.classList.add('hidden'); modal.classList.remove('flex'); });
+    modal.addEventListener('click', (e)=>{ if(e.target===modal){ modal.classList.add('hidden'); modal.classList.remove('flex'); } });
+
+    // Mensagem do agendamento (sem campo de "Formato")
+    function buildBookingMessage(){
+      const n = document.getElementById('bName').value.trim();
+      const d = document.getElementById('bDate').value;
+      const t = document.getElementById('bTime').value;
+      const s = document.getElementById('bService').value;
+      const b = document.getElementById('bBrief').value.trim();
+      return `Oi Laís! Sou ${n}. Quero agendar em ${d} às ${t} (horário de Brasília). Serviço: ${s}. Briefing: ${b}`;
+    }
+
+    // Abrir Gmail diretamente (fallback para mailto)
+    function openEmailCompose(subject, body){
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('laisvazgoncalves18@gmail.com')}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const win = window.open(gmailUrl,'_blank');
+      // Fallback caso o navegador bloqueie a nova aba
+      setTimeout(()=>{ if(!win || win.closed){ window.location.href = `mailto:laisvazgoncalves18@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}` } }, 400);
+    }
+
+    // Enviar
+    document.getElementById('btnBookingWhats')?.addEventListener('click',(e)=>{
+      e.preventDefault();
+      const text = buildBookingMessage();
+      window.open(`https://wa.me/559991712084?text=${encodeURIComponent(text)}`,'_blank');
+      document.getElementById('bookingStatus').classList.remove('hidden');
+    });
+    document.getElementById('btnBookingEmail')?.addEventListener('click',(e)=>{
+      e.preventDefault();
+      const text = buildBookingMessage();
+      openEmailCompose('Agendamento - Laís Vaz', text);
+      document.getElementById('bookingStatus').classList.remove('hidden');
+    });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Idiomas (mesmo botão, mantendo cabeçalho e clock bilíngue)
+    const dict={pt:{}, en:{}}; // mantemos só clock bilíngue aqui
+    const langBtn=document.getElementById('langToggle');
+    langBtn.addEventListener('click',()=>{ const curr=localStorage.getItem('lang')||'pt'; localStorage.setItem('lang', curr==='pt'?'en':'pt'); updateClock(); });
+  </script>
+</body>
+</html>
