@@ -1,124 +1,120 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Laís Vaz — Portfólio</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0b10;           /* fundo principal */
-      --panel:#12121a;        /* cartões */
-      --ink:#f5f5f8;          /* texto */
-      --muted:#b1b3c0;        /* texto secundário */
-      --accent1:#7c3aed;      /* roxo */
-      --accent2:#ec4899;      /* rosa */
-      --accent3:#a78bfa;      /* roxo claro */
-      --ring:rgba(124,58,237,.35);
-      --radius:16px;
-      --shadow:0 10px 40px rgba(0,0,0,.35);
-      --grad:linear-gradient(135deg,var(--accent1),var(--accent2));
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(1800px 900px at 50% -300px, rgba(124,58,237,.25), transparent 60%),
-        radial-gradient(1200px 600px at 120% 10%, rgba(236,72,153,.18), transparent 65%),
-        var(--bg);
-    }
-    a{color:#fff; text-decoration:none}
-    /* NAV */
-    header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px);
-      background:rgba(11,11,16,.72); border-bottom:1px solid rgba(167,139,250,.15);
-    }
-    .nav{
-      max-width:1100px; margin:auto; display:flex; align-items:center; gap:16px;
-      padding:14px 20px;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
-    .brand .logo{
-      width:34px; height:34px; border-radius:8px; background:var(--grad);
-      display:grid; place-items:center; font-weight:800;
-      box-shadow:0 6px 20px rgba(124,58,237,.45);
-    }
-    .nav a.link{padding:8px 10px; border-radius:10px; color:#e7e7f2}
-    .nav a.link:hover{background:rgba(167,139,250,.12)}
-    .cta{
-      margin-left:auto; padding:10px 14px; border-radius:12px; font-weight:800;
-      background:var(--grad); color:white; box-shadow:var(--shadow);
-    }
-    main{max-width:1100px; margin:40px auto; padding:0 20px}
-    section{scroll-margin-top:90px}
-    .section-title{font-weight:800; font-size:28px; margin:10px 0 18px}
-    .card{
-      background:var(--panel); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow);
-      border:1px solid rgba(167,139,250,.12);
-    }
-    /* HERO */
-    .hero{
-      display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:center;
-      margin-bottom:36px;
-    }
-    .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(167,139,250,.15); color:#e1ddff; font-size:12px; font-weight:700}
-    h1{font-size:46px; line-height:1.05; margin:12px 0 10px}
-    .lead{color:var(--muted); margin:0; font-size:18px}
-    .btn{
-      padding:12px 15px; border-radius:12px; font-weight:800; border:0; cursor:pointer; display:inline-block
-    }
-    .btn.primary{background:var(--grad); color:#fff}
-    .btn.ghost{background:transparent; border:1px solid rgba(167,139,250,.25); color:#e7e7f2}
-    /* GRIDS */
-    .grid{display:grid; gap:18px}
-    .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .work{overflow:hidden; display:flex; flex-direction:column; gap:10px}
-    .work img{width:100%; height:220px; object-fit:cover; border-radius:14px}
-    .work h3{margin:0; font-size:18px}
-    .work p{margin:0; color:var(--muted); font-size:14px}
-    /* FORM */
-    form label{font-weight:700; font-size:14px; margin-bottom:6px; display:block}
-    input,select,textarea{
-      width:100%; padding:14px 14px; border:1px solid rgba(167,139,250,.25); border-radius:12px;
-      outline:none; font-size:15px; color:#fff; background:#0f0f17;
-    }
-    input::placeholder, textarea::placeholder{color:#8c90a3}
-    input:focus,select:focus,textarea:focus{border-color:var(--accent3); box-shadow:0 0 0 4px var(--ring)}
-    .row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    .actions{display:flex; gap:12px; flex-wrap:wrap}
-    .btn.whats{background:#25d366; color:#0b2a14}
-    .btn.mail{background:#111827; color:#fff; border:1px solid rgba(255,255,255,.08)}
-    .contact-strip{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; color:#d7d8e4; font-size:14px
-    }
-    .contact-strip a{color:#d7d8e4}
-    .footer{color:#9aa0b6; text-align:center; margin:40px 0 60px; font-size:14px}
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .g-3{grid-template-columns:1fr}
-      .g-2{grid-template-columns:1fr}
-      h1{font-size:38px}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Laís Vaz — Portfólio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b10; --panel:#12121a; --ink:#f5f5f8; --muted:#b1b3c0;
+    --accent1:#7c3aed; --accent2:#ec4899; --accent3:#a78bfa; --blue:#3b82f6;
+    --ring:rgba(124,58,237,.35); --radius:16px; --shadow:0 12px 40px rgba(0,0,0,.45);
+    --grad:linear-gradient(135deg,var(--accent1),var(--accent2));
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{
+    font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink);
+    background:
+      radial-gradient(1600px 700px at 50% -260px, rgba(124,58,237,.22), transparent 60%),
+      var(--bg);
+  }
+  a{color:#fff; text-decoration:none}
+
+  /* NAV */
+  header{position:sticky; top:0; z-index:50; backdrop-filter:blur(8px);
+    background:rgba(11,11,16,.78); border-bottom:1px solid rgba(167,139,250,.14)}
+  .nav{max-width:1180px; margin:auto; padding:14px 20px; display:flex; gap:14px; align-items:center}
+  .brand{display:flex; gap:10px; align-items:center; font-weight:800}
+  .logo{width:34px; height:34px; border-radius:10px; background:var(--grad); display:grid; place-items:center; box-shadow:0 6px 18px rgba(124,58,237,.45)}
+  .link{padding:8px 10px; border-radius:10px; color:#e7e7f2} .link:hover{background:rgba(167,139,250,.12)}
+  .spacer{flex:1}
+  .lang-toggle{display:flex; gap:6px; background:rgba(167,139,250,.12); padding:6px; border-radius:999px; border:1px solid rgba(167,139,250,.2)}
+  .lang-btn{padding:6px 12px; border-radius:999px; font-weight:800; font-size:12px; color:#e7e7f2; cursor:pointer; border:0; background:transparent}
+  .lang-btn.active{background:var(--grad); color:#fff}
+  .upwork{margin-left:10px; background:var(--grad); color:#fff; padding:10px 14px; border-radius:12px; font-weight:800; box-shadow:var(--shadow)}
+
+  /* LAYOUT */
+  main{max-width:1180px; margin:32px auto 60px; padding:0 20px}
+  .card{background:var(--panel); border-radius:20px; padding:26px; border:1px solid rgba(167,139,250,.14); box-shadow:var(--shadow)}
+  .accent--purple{
+    background-image:linear-gradient(180deg,#a78bfa 0%, #7c3aed 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
+  }
+
+  /* HERO */
+  .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:26px; align-items:center}
+  .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(167,139,250,.15); color:#e1ddff; font-weight:700; font-size:12px}
+  h1{font-size:54px; line-height:1.02; margin:12px 0 8px}
+  .lead{color:var(--muted); margin:0 0 8px}
+  .buttons{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+  .btn{padding:12px 16px; border-radius:12px; font-weight:800; border:0; cursor:pointer}
+  .btn.primary{background:var(--grad); color:#fff}
+  .btn.ghost{background:transparent; border:1px solid rgba(167,139,250,.25); color:#e7e7f2}
+  .hero-art{padding:16px}
+
+  /* GLOW AZUL seguindo o mouse */
+  .art{
+    position:relative; overflow:hidden; height:360px; border-radius:18px;
+    background:
+      linear-gradient(180deg, rgba(32,18,53,.7), rgba(52,25,79,.7)),
+      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    box-shadow:0 16px 40px rgba(0,0,0,.55);
+    --mx: 50%; --my: 50%;
+  }
+  .art::after{
+    content:""; position:absolute; inset:-200px; pointer-events:none; mix-blend-mode:screen;
+    background: radial-gradient(220px 180px at var(--mx) var(--my), rgba(59,130,246,.55), transparent 60%);
+    transition: background-position .04s linear;
+  }
+
+  /* TAGS deslizantes */
+  .tags-wrap{margin-top:16px}
+  .tags-mask{overflow:hidden; border-radius:999px; background:#0f0f17; border:1px solid rgba(167,139,250,.14); box-shadow:var(--shadow);}
+  .scroller{display:flex; gap:10px; width:max-content; padding:10px 14px; animation:scroll 22s linear infinite}
+  .scroller:hover{animation-play-state:paused}
+  @keyframes scroll{ to{ transform:translateX(-50%)} }
+  .tag{display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(167,139,250,.12); color:#e1ddff; font-weight:700; font-size:12px; white-space:nowrap}
+  .dot{width:8px; height:8px; border-radius:999px; background:var(--accent1)}
+
+  /* PROJETOS */
+  .section-title{font-size:28px; font-weight:800; margin:26px 0 12px}
+  .grid{display:grid; gap:18px}
+  .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .work{display:flex; flex-direction:column; gap:8px}
+  .work img{width:100%; height:220px; object-fit:cover; border-radius:14px}
+  .work h3{margin:0; font-size:18px}
+  .work p{margin:0; color:var(--muted); font-size:14px}
+
+  /* FORM */
+  form label{font-weight:700; font-size:14px; margin-bottom:6px; display:block}
+  input,select,textarea{
+    width:100%; padding:14px; border:1px solid rgba(167,139,250,.25); border-radius:12px;
+    outline:none; font-size:15px; color:#fff; background:#0f0f17;
+  }
+  input::placeholder,textarea::placeholder{color:#8c90a3}
+  .row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .actions{display:flex; gap:12px; flex-wrap:wrap}
+  .btn.whats{background:#25d366; color:#0b2a14}
+  .btn.mail{background:#111827; color:#fff; border:1px solid rgba(255,255,255,.08)}
+  .helper{color:#9aa0b6; font-size:12px; margin-top:6px}
+
+  .footer{color:#9aa0b6; text-align:center; margin:40px 0 60px; font-size:14px}
+</style>
 </head>
 <body>
 <header>
   <nav class="nav">
-    <div class="brand">
-      <div class="logo">L</div>
-      <div>Laís Vaz</div>
+    <div class="brand"><div class="logo">L</div><div>Laís Vaz</div></div>
+    <a class="link" data-i18n="home" href="#home">Home</a>
+    <a class="link" data-i18n="portfolio" href="#portfolio">Portfólio</a>
+    <a class="link" data-i18n="book" href="#agendar">Agendar</a>
+    <div class="spacer"></div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnPT">PT</button>
+      <button class="lang-btn" id="btnEN">EN</button>
     </div>
-    <a class="link" href="#home">Home</a>
-    <a class="link" href="#sobre">Sobre</a>
-    <a class="link" href="#experiencia">Experiência</a>
-    <a class="link" href="#portfolio">Portfólio</a>
-    <a class="link" href="#agendar">Agendar</a>
-    <a class="cta" id="upworkBtn" href="https://www.upwork.com/freelancers/~011fd459d0bfe0d101?mp_source=share" rel="noopener">Upwork • Hire me</a>
+    <a class="upwork" href="https://www.upwork.com/freelancers/~011fd459d0bfe0d101?mp_source=share" rel="noopener">Upwork • Hire me</a>
   </nav>
 </header>
 
@@ -126,99 +122,85 @@
   <!-- HERO -->
   <section class="hero">
     <div class="card">
-      <span class="badge">I’m Laís — Graphic Designer</span>
-      <h1><span style="background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent">Graphic Designer</span> focada em Social Media e Identidade</h1>
-      <p class="lead">Artes limpas, tipografia forte e resultados. Crio carrosséis, posts, banners e identidades enxutas.</p>
-      <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn primary" href="#agendar">Agendar atendimento</a>
-        <a class="btn ghost" href="#portfolio">Ver projetos</a>
-      </div>
-      <div class="contact-strip">
-        <span>📞 <a href="https://wa.me/559991712084" aria-label="WhatsApp">+55 99 9171-2084</a></span> •
-        <span>✉️ <a href="mailto:laisvazgoncalves18@gmail.com">laisvazgoncalves18@gmail.com</a></span> •
-        <span>💼 <a href="https://www.upwork.com/freelancers/~011fd459d0bfe0d101?mp_source=share">Upwork</a></span>
+      <span class="badge" data-i18n="badge">Sou Laís — Designer Gráfica</span>
+      <h1>
+        <span class="accent--purple" data-i18n="title1">Designer Gráfica</span>
+        <span data-i18n="title2">focada em Social Media e Identidade</span>
+      </h1>
+      <p class="lead" data-i18n="desc">Artes limpas, tipografia forte e resultados. Crio carrosséis, posts, banners e identidades enxutas.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#agendar" data-i18n="btnBook">Agendar</a>
+        <a class="btn ghost" href="#portfolio" data-i18n="btnView">Ver portfólio</a>
       </div>
     </div>
-    <div class="card" style="padding:0; overflow:hidden">
-      <!-- Hero mock -->
-      <div style="height:380px; background:radial-gradient(800px 300px at -10% -20%, rgba(124,58,237,.45), transparent 45%), radial-gradient(700px 300px at 110% 110%, rgba(236,72,153,.45), transparent 35%), #0f0f17; display:grid; place-items:center">
-        <div style="width:220px; height:220px; border-radius:20px; background:var(--grad); filter:blur(10px); opacity:.8"></div>
-      </div>
+    <div class="card hero-art">
+      <div class="art" id="artGlow"></div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section id="sobre">
-    <h2 class="section-title">Sobre mim</h2>
-    <div class="card">
-      <p style="margin:0; color:var(--muted)">
-        Sou designer com foco em Social Media (Canva) e identidade visual essencial. Gosto de projetos diretos,
-        entregas rápidas e comunicação simples. Meu objetivo é transformar briefing em peça clara e bonita.
-      </p>
-    </div>
-  </section>
-
-  <!-- EXPERIÊNCIA -->
-  <section id="experiencia" style="margin-top:34px">
-    <h2 class="section-title">Experiência</h2>
-    <div class="grid g-2">
-      <div class="card">
-        <h3 style="margin:0 0 8px">Mais de <span style="color:#ffd580">projetos entregues</span> como Social Media</h3>
-        <p class="lead" style="font-size:15px">Carrosséis, posts, stories e criativos para campanhas de tráfego.</p>
-      </div>
-      <div class="card">
-        <h3 style="margin:0 0 8px">Identidade Visual Essencial</h3>
-        <p class="lead" style="font-size:15px">Logo, paleta, tipografia e kit de aplicações rápidas e consistentes.</p>
+  <!-- TAGS -->
+  <div class="tags-wrap">
+    <div class="tags-mask">
+      <div class="scroller">
+        <span class="tag"><strong>Graphic Designer</strong></span>
+        <span class="tag"><span class="dot"></span> Social Media</span>
+        <span class="tag"><span class="dot"></span> Carrossel</span>
+        <span class="tag"><span class="dot"></span> Identidade Visual</span>
+        <span class="tag"><span class="dot"></span> Banners</span>
+        <!-- duplicado para looping suave -->
+        <span class="tag"><strong>Graphic Designer</strong></span>
+        <span class="tag"><span class="dot"></span> Social Media</span>
+        <span class="tag"><span class="dot"></span> Carrossel</span>
+        <span class="tag"><span class="dot"></span> Identidade Visual</span>
+        <span class="tag"><span class="dot"></span> Banners</span>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- PORTFÓLIO -->
-  <section id="portfolio" style="margin-top:34px">
-    <h2 class="section-title">Projetos selecionados</h2>
+  <section id="portfolio">
+    <h2 class="section-title" data-i18n="featured">Trabalhos em destaque</h2>
     <div class="grid g-3">
       <article class="card work">
         <img src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1200&auto=format&fit=crop" alt="">
         <h3>Carousel • Social Media</h3>
-        <p>Conteúdo visual com foco em clareza e conversa.</p>
+        <p data-i18n="work1">Conteúdo visual com foco em clareza e conversa.</p>
       </article>
       <article class="card work">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="">
         <h3>Banner • Campaign</h3>
-        <p>Direção de arte e copy simples para CTR.</p>
+        <p data-i18n="work2">Direção de arte e copy simples para CTR.</p>
       </article>
       <article class="card work">
-        <img src="https://images.unsplash.com/photo-1520975693416-35a3c1a6d4f1?q=80&w=1200&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?q=80&w=1200&auto=format&fit=crop" alt="">
         <h3>Logo • Identity</h3>
-        <p>Identidade consistente e escalável.</p>
+        <p data-i18n="work3">Identidade consistente e escalável.</p>
       </article>
     </div>
   </section>
 
   <!-- AGENDAR -->
-  <section id="agendar" style="margin-top:34px">
-    <h2 class="section-title">Agendar atendimento</h2>
+  <section id="agendar" style="margin-top:28px">
+    <h2 class="section-title" data-i18n="bookTitle">Agendar atendimento</h2>
     <div class="card">
       <form id="formAgenda">
         <div class="grid" style="gap:14px">
           <div>
-            <label for="nome">Seu nome</label>
-            <input id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required>
+            <label for="nome" data-i18n="name">Seu nome</label>
+            <input id="nome" name="nome" placeholder="Seu nome" required>
           </div>
-
           <div class="row">
             <div>
-              <label for="data">Data (dd/mm/aaaa)</label>
-              <input id="data" name="data" placeholder="dd/mm/aaaa" inputmode="numeric" maxlength="10" required>
+              <label for="data" data-i18n="date">Data (dd/mm/aaaa)</label>
+              <input id="data" name="data" placeholder="dd/mm/aaaa" required>
             </div>
             <div>
-              <label for="hora">Horário</label>
+              <label for="hora" data-i18n="time">Horário</label>
               <input id="hora" name="hora" type="time" required>
             </div>
           </div>
-
           <div>
-            <label for="servico">Serviço</label>
+            <label for="servico" data-i18n="service">Serviço</label>
             <select id="servico" name="servico">
               <option>Social Media (Canva)</option>
               <option>Branding Essencial</option>
@@ -226,100 +208,98 @@
               <option>Outros</option>
             </select>
           </div>
-
           <div>
-            <label for="mensagem">Mensagem / briefing</label>
+            <label for="mensagem" data-i18n="msg">Mensagem / briefing</label>
             <textarea id="mensagem" rows="4" placeholder="Conte o essencial..."></textarea>
           </div>
-
           <div class="actions">
-            <button type="button" class="btn whats" id="btnWhats">Enviar via WhatsApp</button>
-            <button type="button" class="btn mail" id="btnMail">Enviar por e-mail</button>
-            <a class="btn ghost" href="#portfolio">Ver projetos</a>
+            <button type="button" class="btn whats" id="btnWhats" data-i18n="sendWhats">Enviar via WhatsApp</button>
+            <button type="button" class="btn mail" id="btnMail" data-i18n="sendMail">Enviar por e-mail</button>
+          </div>
+          <div class="helper">
+            ✉️ <a href="mailto:laisvazgoncalves18@gmail.com">laisvazgoncalves18@gmail.com</a> •
+            💼 <a href="https://www.upwork.com/freelancers/~011fd459d0bfe0d101?mp_source=share">Upwork</a>
           </div>
         </div>
       </form>
     </div>
   </section>
 
-  <div class="footer">
-    © <span id="year"></span> Laís Vaz — <a href="https://wa.me/559991712084">+55 99 9171-2084</a> •
-    <a href="mailto:laisvazgoncalves18@gmail.com">laisvazgoncalves18@gmail.com</a> •
-    <a href="https://www.upwork.com/freelancers/~011fd459d0bfe0d101?mp_source=share">Upwork</a>
-  </div>
+  <div class="footer">© <span id="year"></span> Laís Vaz — Todos os direitos reservados.</div>
 </main>
 
 <script>
-  // Atualiza ano
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Máscara simples para dd/mm/aaaa
-  const elData = document.getElementById('data');
-  elData.addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '').slice(0,8);
-    if (v.length >= 5) v = v.replace(/^(\d{2})(\d{2})(\d{0,4})$/, "$1/$2/$3");
-    else if (v.length >= 3) v = v.replace(/^(\d{2})(\d{0,2})$/, "$1/$2");
-    e.target.value = v;
+  // Glow azul seguindo o mouse
+  const art=document.getElementById('artGlow');
+  art.addEventListener('mousemove',e=>{
+    const r=art.getBoundingClientRect();
+    art.style.setProperty('--mx',`${e.clientX-r.left}px`);
+    art.style.setProperty('--my',`${e.clientY-r.top}px`);
   });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  // Dicionário PT / EN
+  const texts={
+    pt:{home:'Home',portfolio:'Portfólio',book:'Agendar',badge:'Sou Laís — Designer Gráfica',title1:'Designer Gráfica',title2:'focada em Social Media e Identidade',desc:'Artes limpas, tipografia forte e resultados. Crio carrosséis, posts, banners e identidades enxutas.',btnBook:'Agendar',btnView:'Ver portfólio',featured:'Trabalhos em destaque',work1:'Conteúdo visual com foco em clareza e conversa.',work2:'Direção de arte e copy simples para CTR.',work3:'Identidade consistente e escalável.',bookTitle:'Agendar atendimento',name:'Seu nome',date:'Data (dd/mm/aaaa)',time:'Horário',service:'Serviço',msg:'Mensagem / briefing',sendWhats:'Enviar via WhatsApp',sendMail:'Enviar por e-mail'},
+    en:{home:'Home',portfolio:'Portfolio',book:'Book',badge:'I’m Laís — Graphic Designer',title1:'Graphic Designer',title2:'focused on Social Media and Branding',desc:'Clean design, strong typography, and results. I create carousels, posts, banners, and concise brand identities.',btnBook:'Book now',btnView:'See portfolio',featured:'Featured projects',work1:'Visual content with clarity and engagement.',work2:'Art direction and simple copy for CTR.',work3:'Consistent and scalable identity.',bookTitle:'Schedule a meeting',name:'Your name',date:'Date (yyyy-mm-dd)',time:'Time',service:'Service',msg:'Message / briefing',sendWhats:'Send via WhatsApp',sendMail:'Send by e-mail'}
+  };
+
+  // Estados de idioma
+  let lang='pt';
+  const tEls=document.querySelectorAll('[data-i18n]');
+  const setLang=(l)=>{
+    lang=l;
+    tEls.forEach(el=>{ el.textContent=texts[l][el.dataset.i18n]; });
+    document.getElementById('btnPT').classList.toggle('active',l==='pt');
+    document.getElementById('btnEN').classList.toggle('active',l==='en');
+    // Ajusta placeholder conforme idioma
+    document.getElementById('nome').placeholder = (l==='en'?'Your name':'Seu nome');
+    document.getElementById('data').placeholder = (l==='en'?'yyyy-mm-dd':'dd/mm/aaaa');
+    document.getElementById('mensagem').placeholder = (l==='en'?'Tell me the essentials...':'Conte o essencial...');
+  };
+
+  // Botões PT/EN
+  document.getElementById('btnPT').onclick=()=>setLang('pt');
+  document.getElementById('btnEN').onclick=()=>setLang('en');
 
   // Helpers
-  function encode(s){ return encodeURIComponent(s).replace(/%20/g, '+'); }
-  function brDateToISO(d){ // dd/mm/aaaa -> aaaa-mm-dd
-    const m = d.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
-    if(!m) return d;
-    return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
-  }
+  function encode(s){return encodeURIComponent(s).replace(/%20/g,'+');}
 
+  // Monta assunto/corpo de acordo com o idioma atual
   function montarMensagem(){
-    const nome   = document.getElementById('nome').value.trim();
-    const data   = document.getElementById('data').value.trim();
-    const hora   = document.getElementById('hora').value;
-    const serv   = document.getElementById('servico').value;
-    const msg    = document.getElementById('mensagem').value.trim();
+    const nome=document.getElementById('nome').value.trim(),
+          data=document.getElementById('data').value.trim(),
+          hora=document.getElementById('hora').value.trim(),
+          serv=document.getElementById('servico').value.trim(),
+          msg=document.getElementById('mensagem').value.trim();
 
-    const dataISO = brDateToISO(data);
-    const corpo =
-`Olá, Laís Vaz!
-
-Gostaria de agendar um atendimento.
-
-Nome: ${nome}
-Data: ${data} (${dataISO})
-Horário: ${hora}
-Serviço: ${serv}
-
-Mensagem/briefing:
-${msg}
-
-Enviado pelo site de portfólio.`;
-    return { assunto:`Agendamento — ${nome} — ${data} ${hora}`, corpo };
+    if(lang==='en'){
+      const corpo=`Hello Laís Vaz!\n\nI’d like to schedule a meeting.\n\nName: ${nome}\nDate: ${data}\nTime: ${hora}\nService: ${serv}\n\nMessage:\n${msg}\n\nSent from the website.`;
+      const assunto=`Booking — ${nome} — ${data} ${hora}`;
+      return {assunto, corpo};
+    }else{
+      const corpo=`Olá, Laís Vaz!\n\nGostaria de agendar um atendimento.\n\nNome: ${nome}\nData: ${data}\nHorário: ${hora}\nServiço: ${serv}\n\nMensagem:\n${msg}\n\nEnviado pelo site.`;
+      const assunto=`Agendamento — ${nome} — ${data} ${hora}`;
+      return {assunto, corpo};
+    }
   }
 
-  // WhatsApp
-  document.getElementById('btnWhats').addEventListener('click', () => {
-    const { corpo } = montarMensagem();
-    // Abre conversa com número direto
-    const url = `https://wa.me/559991712084?text=${encode(corpo)}`;
-    window.location.href = url;
+  // WhatsApp (envia no idioma atual)
+  document.getElementById('btnWhats').addEventListener('click', ()=>{
+    const {corpo}=montarMensagem();
+    window.open(`https://wa.me/559991712084?text=${encode(corpo)}`,'_blank');
   });
 
-  // E-mail (abre app de e-mail)
-  document.getElementById('btnMail').addEventListener('click', () => {
-    const { assunto, corpo } = montarMensagem();
-    const mailto = `mailto:laisvazgoncalves18@gmail.com?subject=${encode(assunto)}&body=${encode(corpo)}`;
-    window.location.href = mailto;
+  // E-mail sempre via Gmail (no idioma atual)
+  document.getElementById('btnMail').addEventListener('click', ()=>{
+    const {assunto, corpo}=montarMensagem();
+    const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=laisvazgoncalves18@gmail.com&su=${encode(assunto)}&body=${encode(corpo)}`;
+    window.open(gmail,'_blank');
   });
 
-  // Rolagem suave
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const id = a.getAttribute('href');
-      if(id.length>1){
-        e.preventDefault();
-        document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    });
-  });
+  // Idioma padrão ao carregar
+  setLang('pt');
 </script>
 </body>
 </html>
