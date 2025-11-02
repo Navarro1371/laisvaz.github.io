@@ -8,102 +8,114 @@
 <style>
   :root{
     --bg:#0b0b10; --panel:#12121a; --ink:#f5f5f8; --muted:#b1b3c0;
-    --accent1:#7c3aed; --accent2:#ec4899; --accent3:#a78bfa; --blue:#3b82f6;
-    --ring:rgba(124,58,237,.35); --radius:16px; --shadow:0 12px 40px rgba(0,0,0,.45);
+    --accent1:#7c3aed; --accent2:#ec4899; --accent3:#a78bfa;
     --grad:linear-gradient(135deg,var(--accent1),var(--accent2));
+    --ring:rgba(167,139,250,.14);
+    --header-h:72px;
   }
-  *{box-sizing:border-box} html,body{margin:0}
+  html{
+    scroll-behavior:smooth;
+    /* impede o header fixo de cobrir o título ao rolar para âncoras */
+    scroll-padding-top:calc(var(--header-h) + 20px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
   body{
-    font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink);
-    background:
-      radial-gradient(1600px 700px at 50% -260px, rgba(124,58,237,.22), transparent 60%),
-      var(--bg);
+    font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    overflow-x:hidden;
+    position:relative;
   }
-  a{color:#fff; text-decoration:none}
+  /* brilho global seguindo o mouse */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(260px 260px at var(--gx,50%) var(--gy,40%),rgba(59,130,246,.28),transparent 60%);
+    transition:background-position .1s ease;
+  }
+  header,main,footer{position:relative;z-index:1}
 
   /* NAV */
-  header{position:sticky; top:0; z-index:50; backdrop-filter:blur(8px);
-    background:rgba(11,11,16,.78); border-bottom:1px solid rgba(167,139,250,.14)}
-  .nav{max-width:1180px; margin:auto; padding:14px 20px; display:flex; gap:14px; align-items:center}
-  .brand{display:flex; gap:10px; align-items:center; font-weight:800}
-  .logo{width:34px; height:34px; border-radius:10px; background:var(--grad); display:grid; place-items:center; box-shadow:0 6px 18px rgba(124,58,237,.45)}
-  .link{padding:8px 10px; border-radius:10px; color:#e7e7f2} .link:hover{background:rgba(167,139,250,.12)}
-  .spacer{flex:1}
-  .lang-toggle{display:flex; gap:6px; background:rgba(167,139,250,.12); padding:6px; border-radius:999px; border:1px solid rgba(167,139,250,.2)}
-  .lang-btn{padding:6px 12px; border-radius:999px; font-weight:800; font-size:12px; color:#e7e7f2; cursor:pointer; border:0; background:transparent}
-  .lang-btn.active{background:var(--grad); color:#fff}
-  .upwork{margin-left:10px; background:var(--grad); color:#fff; padding:10px 14px; border-radius:12px; font-weight:800; box-shadow:var(--shadow)}
+  header{
+    position:sticky;top:0;
+    background:rgba(11,11,16,.78);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--ring);
+  }
+  .nav{max-width:1180px;margin:auto;padding:14px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .brand{display:flex;gap:10px;align-items:center;font-weight:800;font-size:16px}
+  .logo{width:34px;height:34px;border-radius:10px;background:var(--grad);display:grid;place-items:center;box-shadow:0 6px 18px rgba(124,58,237,.45)}
+  .link{padding:8px 10px;border-radius:10px;color:#e7e7f2;text-decoration:none}
+  .link:hover{background:rgba(167,139,250,.12)}
+  .spacer{flex:1 1 auto}
+  .lang-toggle{display:flex;gap:6px;background:rgba(167,139,250,.12);padding:6px;border-radius:999px;border:1px solid var(--ring)}
+  .lang-btn{padding:6px 12px;border-radius:999px;font-weight:800;font-size:12px;color:#e7e7f2;cursor:pointer;border:0;background:transparent}
+  .lang-btn.active{background:var(--grad);color:#fff}
+  .upwork{background:var(--grad);color:#fff;padding:10px 14px;border-radius:12px;font-weight:800;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.35)}
 
   /* LAYOUT */
-  main{max-width:1180px; margin:32px auto 60px; padding:0 20px}
-  .card{background:var(--panel); border-radius:20px; padding:26px; border:1px solid rgba(167,139,250,.14); box-shadow:var(--shadow)}
-  .accent--purple{
-    background-image:linear-gradient(180deg,#a78bfa 0%, #7c3aed 100%);
-    -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
-  }
+  main{max-width:1180px;margin:32px auto 60px;padding:0 20px}
+  .card{background:var(--panel);border-radius:20px;padding:26px;border:1px solid var(--ring);box-shadow:0 8px 20px rgba(0,0,0,.4)}
+  .accent--purple{background-image:linear-gradient(180deg,#a78bfa 0%, #7c3aed 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;}
 
   /* HERO */
-  .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:26px; align-items:center}
-  .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(167,139,250,.15); color:#e1ddff; font-weight:700; font-size:12px}
-  h1{font-size:54px; line-height:1.02; margin:12px 0 8px}
-  .lead{color:var(--muted); margin:0 0 8px}
-  .buttons{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
-  .btn{padding:12px 16px; border-radius:12px; font-weight:800; border:0; cursor:pointer}
-  .btn.primary{background:var(--grad); color:#fff}
-  .btn.ghost{background:transparent; border:1px solid rgba(167,139,250,.25); color:#e7e7f2}
-  .hero-art{padding:16px}
+  .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,139,250,.15);color:#e1ddff;font-weight:700;font-size:12px}
+  h1{font-size:54px;line-height:1.02;margin:12px 0 8px}
+  .lead{color:var(--muted);}
+  .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .btn{padding:12px 16px;border-radius:12px;font-weight:800;cursor:pointer;border:0}
+  .btn.primary{background:var(--grad);color:#fff}
+  .btn.ghost{background:transparent;border:1px solid rgba(167,139,250,.25);color:#e7e7f2}
 
-  /* GLOW AZUL seguindo o mouse */
-  .art{
-    position:relative; overflow:hidden; height:360px; border-radius:18px;
-    background:
-      linear-gradient(180deg, rgba(32,18,53,.7), rgba(52,25,79,.7)),
-      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
-    box-shadow:0 16px 40px rgba(0,0,0,.55);
-    --mx: 50%; --my: 50%;
-  }
-  .art::after{
-    content:""; position:absolute; inset:-200px; pointer-events:none; mix-blend-mode:screen;
-    background: radial-gradient(220px 180px at var(--mx) var(--my), rgba(59,130,246,.55), transparent 60%);
-    transition: background-position .04s linear;
-  }
-
-  /* TAGS deslizantes */
-  .tags-wrap{margin-top:16px}
-  .tags-mask{overflow:hidden; border-radius:999px; background:#0f0f17; border:1px solid rgba(167,139,250,.14); box-shadow:var(--shadow);}
-  .scroller{display:flex; gap:10px; width:max-content; padding:10px 14px; animation:scroll 22s linear infinite}
+  /* TAGS animadas */
+  .tags-mask{overflow:hidden;border-radius:999px;background:#0f0f17;border:1px solid var(--ring);margin-top:16px}
+  .scroller{display:flex;gap:10px;width:max-content;padding:10px 14px;animation:scroll 20s linear infinite}
   .scroller:hover{animation-play-state:paused}
-  @keyframes scroll{ to{ transform:translateX(-50%)} }
-  .tag{display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(167,139,250,.12); color:#e1ddff; font-weight:700; font-size:12px; white-space:nowrap}
-  .dot{width:8px; height:8px; border-radius:999px; background:var(--accent1)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .tag{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(167,139,250,.12);color:#e1ddff;font-weight:700;font-size:12px;white-space:nowrap}
+  .dot{width:8px;height:8px;border-radius:999px;background:var(--accent1)}
 
-  /* PROJETOS */
-  .section-title{font-size:28px; font-weight:800; margin:26px 0 12px}
-  .grid{display:grid; gap:18px}
+  .section-title{font-size:28px;font-weight:800;margin:26px 0 12px}
+  .grid{display:grid;gap:18px}
   .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .work{display:flex; flex-direction:column; gap:8px}
-  .work img{width:100%; height:220px; object-fit:cover; border-radius:14px}
-  .work h3{margin:0; font-size:18px}
-  .work p{margin:0; color:var(--muted); font-size:14px}
+  .work img{width:100%;height:220px;object-fit:cover;border-radius:14px}
+  .work h3{margin:0;font-size:18px}
+  .work p{margin:0;color:var(--muted);font-size:14px}
 
   /* FORM */
-  form label{font-weight:700; font-size:14px; margin-bottom:6px; display:block}
+  form label{font-weight:700;font-size:14px;margin-bottom:6px;display:block}
   input,select,textarea{
-    width:100%; padding:14px; border:1px solid rgba(167,139,250,.25); border-radius:12px;
-    outline:none; font-size:15px; color:#fff; background:#0f0f17;
+    width:100%;padding:14px;border:1px solid rgba(167,139,250,.25);border-radius:12px;
+    background:#0f0f17;color:#fff;font-size:16px;
   }
   input::placeholder,textarea::placeholder{color:#8c90a3}
-  .row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-  .actions{display:flex; gap:12px; flex-wrap:wrap}
-  .btn.whats{background:#25d366; color:#0b2a14}
-  .btn.mail{background:#111827; color:#fff; border:1px solid rgba(255,255,255,.08)}
-  .helper{color:#9aa0b6; font-size:12px; margin-top:6px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .btn.whats{background:#25d366;color:#0b2a14}
+  .btn.mail{background:#111827;color:#fff;border:1px solid rgba(255,255,255,.08)}
+  .helper{color:#9aa0b6;font-size:12px;margin-top:6px}
+  .footer{text-align:center;color:#9aa0b6;margin:40px 0 60px;font-size:14px}
 
-  .footer{color:#9aa0b6; text-align:center; margin:40px 0 60px; font-size:14px}
+  /* backup de offset por âncora */
+  [id]{scroll-margin-top:calc(var(--header-h) + 20px)}
+
+  /* RESPONSIVO */
+  @media(max-width:1024px){
+    h1{font-size:46px}
+    .g-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media(max-width:768px){
+    .hero{grid-template-columns:1fr}
+    h1{font-size:42px}
+    .g-3{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+  }
+  @media(max-width:480px){
+    h1{font-size:36px}
+  }
 </style>
 </head>
 <body>
-<header>
+<header id="topbar">
   <nav class="nav">
     <div class="brand"><div class="logo">L</div><div>Laís Vaz</div></div>
     <a class="link" data-i18n="home" href="#home">Home</a>
@@ -120,40 +132,40 @@
 
 <main id="home">
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="card">
-      <span class="badge" data-i18n="badge">Sou Laís — Designer Gráfica</span>
-      <h1>
-        <span class="accent--purple" data-i18n="title1">Designer Gráfica</span>
-        <span data-i18n="title2">focada em Social Media e Identidade</span>
-      </h1>
-      <p class="lead" data-i18n="desc">Artes limpas, tipografia forte e resultados. Crio carrosséis, posts, banners e identidades enxutas.</p>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <!-- FOTO DA LAÍS (troque o arquivo 'foto-lais.jpg' se quiser) -->
+        <img src="imagens/Lais .jpg" alt="Laís Vaz" style="width:130px;height:130px;object-fit:cover;border-radius:50%;border:3px solid #7c3aed;box-shadow:0 0 20px rgba(124,58,237,.4);">
+        <div>
+          <span class="badge" data-i18n="badge">Sou Laís — Designer Gráfica</span>
+          <h1><span class="accent--purple" data-i18n="title1">Designer Gráfica</span> <span data-i18n="title2">focada em Social Media e Identidade</span></h1>
+          <p class="lead" data-i18n="desc">Artes limpas, tipografia forte e resultados. Crio carrosséis, posts, banners e identidades enxutas.</p>
+        </div>
+      </div>
       <div class="buttons">
         <a class="btn primary" href="#agendar" data-i18n="btnBook">Agendar</a>
         <a class="btn ghost" href="#portfolio" data-i18n="btnView">Ver portfólio</a>
       </div>
     </div>
-    <div class="card hero-art">
-      <div class="art" id="artGlow"></div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="Design" style="width:100%;border-radius:18px">
     </div>
   </section>
 
-  <!-- TAGS -->
-  <div class="tags-wrap">
-    <div class="tags-mask">
-      <div class="scroller">
-        <span class="tag"><strong>Graphic Designer</strong></span>
-        <span class="tag"><span class="dot"></span> Social Media</span>
-        <span class="tag"><span class="dot"></span> Carrossel</span>
-        <span class="tag"><span class="dot"></span> Identidade Visual</span>
-        <span class="tag"><span class="dot"></span> Banners</span>
-        <!-- duplicado para looping suave -->
-        <span class="tag"><strong>Graphic Designer</strong></span>
-        <span class="tag"><span class="dot"></span> Social Media</span>
-        <span class="tag"><span class="dot"></span> Carrossel</span>
-        <span class="tag"><span class="dot"></span> Identidade Visual</span>
-        <span class="tag"><span class="dot"></span> Banners</span>
-      </div>
+  <!-- TAGS ANIMADAS -->
+  <div class="tags-mask" id="tags">
+    <div class="scroller">
+      <span class="tag"><span class="dot"></span> Identidade Visual</span>
+      <span class="tag"><span class="dot"></span> Banners</span>
+      <span class="tag"><span class="dot"></span> Graphic Designer</span>
+      <span class="tag"><span class="dot"></span> Social Media</span>
+      <span class="tag"><span class="dot"></span> Carrossel</span>
+      <span class="tag"><span class="dot"></span> Identidade Visual</span>
+      <span class="tag"><span class="dot"></span> Banners</span>
+      <span class="tag"><span class="dot"></span> Graphic Designer</span>
+      <span class="tag"><span class="dot"></span> Social Media</span>
+      <span class="tag"><span class="dot"></span> Carrossel</span>
     </div>
   </div>
 
@@ -184,42 +196,34 @@
     <h2 class="section-title" data-i18n="bookTitle">Agendar atendimento</h2>
     <div class="card">
       <form id="formAgenda">
-        <div class="grid" style="gap:14px">
+        <label data-i18n="name" for="nome">Seu nome</label>
+        <input id="nome" placeholder="Seu nome" required>
+        <div class="row">
           <div>
-            <label for="nome" data-i18n="name">Seu nome</label>
-            <input id="nome" name="nome" placeholder="Seu nome" required>
-          </div>
-          <div class="row">
-            <div>
-              <label for="data" data-i18n="date">Data (dd/mm/aaaa)</label>
-              <input id="data" name="data" placeholder="dd/mm/aaaa" required>
-            </div>
-            <div>
-              <label for="hora" data-i18n="time">Horário</label>
-              <input id="hora" name="hora" type="time" required>
-            </div>
+            <label data-i18n="date" for="data">Data (dd/mm/aaaa)</label>
+            <input id="data" placeholder="dd/mm/aaaa" required>
           </div>
           <div>
-            <label for="servico" data-i18n="service">Serviço</label>
-            <select id="servico" name="servico">
-              <option>Social Media (Canva)</option>
-              <option>Branding Essencial</option>
-              <option>Banner/Criativo</option>
-              <option>Outros</option>
-            </select>
+            <label data-i18n="time" for="hora">Horário</label>
+            <input id="hora" type="time" required>
           </div>
-          <div>
-            <label for="mensagem" data-i18n="msg">Mensagem / briefing</label>
-            <textarea id="mensagem" rows="4" placeholder="Conte o essencial..."></textarea>
-          </div>
-          <div class="actions">
-            <button type="button" class="btn whats" id="btnWhats" data-i18n="sendWhats">Enviar via WhatsApp</button>
-            <button type="button" class="btn mail" id="btnMail" data-i18n="sendMail">Enviar por e-mail</button>
-          </div>
-          <div class="helper">
-            ✉️ <a href="mailto:laisvazgoncalves18@gmail.com">laisvazgoncalves18@gmail.com</a> •
-            💼 <a href="https://www.upwork.com/freelancers/~011fd459d0bfe0d101?mp_source=share">Upwork</a>
-          </div>
+        </div>
+        <label data-i18n="service" for="servico">Serviço</label>
+        <select id="servico">
+          <option>Social Media (Canva)</option>
+          <option>Branding Essencial</option>
+          <option>Banner/Criativo</option>
+          <option>Outros</option>
+        </select>
+        <label data-i18n="msg" for="mensagem">Mensagem / briefing</label>
+        <textarea id="mensagem" rows="4" placeholder="Conte o essencial..."></textarea>
+        <div class="actions">
+          <button type="button" class="btn whats" id="btnWhats" data-i18n="sendWhats">Enviar via WhatsApp</button>
+          <button type="button" class="btn mail" id="btnMail" data-i18n="sendMail">Enviar por e-mail</button>
+        </div>
+        <div class="helper">
+          ✉️ <a href="mailto:laisvazgoncalves18@gmail.com">laisvazgoncalves18@gmail.com</a> •
+          💼 <a href="https://www.upwork.com/freelancers/~011fd459d0bfe0d101?mp_source=share">Upwork</a>
         </div>
       </form>
     </div>
@@ -229,77 +233,83 @@
 </main>
 
 <script>
-  // Glow azul seguindo o mouse
-  const art=document.getElementById('artGlow');
-  art.addEventListener('mousemove',e=>{
-    const r=art.getBoundingClientRect();
-    art.style.setProperty('--mx',`${e.clientX-r.left}px`);
-    art.style.setProperty('--my',`${e.clientY-r.top}px`);
-  });
+  /* GLOW global */
+  function setGlow(x,y){
+    document.body.style.setProperty('--gx',x+'px');
+    document.body.style.setProperty('--gy',y+'px');
+  }
+  document.addEventListener('mousemove',e=>setGlow(e.clientX,e.clientY));
+  document.addEventListener('touchmove',e=>{
+    if(e.touches && e.touches[0]) setGlow(e.touches[0].clientX,e.touches[0].clientY);
+  },{passive:true});
+  setGlow(window.innerWidth*0.5, window.innerHeight*0.4);
 
-  document.getElementById('year').textContent=new Date().getFullYear();
+  /* Corrige offset do header dinâmico */
+  function applyHeaderHeight(){
+    const h = document.getElementById('topbar').offsetHeight || 72;
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+  }
+  applyHeaderHeight();
+  window.addEventListener('resize', applyHeaderHeight);
 
-  // Dicionário PT / EN
+  /* Ano no rodapé */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Tradução PT/EN */
   const texts={
     pt:{home:'Home',portfolio:'Portfólio',book:'Agendar',badge:'Sou Laís — Designer Gráfica',title1:'Designer Gráfica',title2:'focada em Social Media e Identidade',desc:'Artes limpas, tipografia forte e resultados. Crio carrosséis, posts, banners e identidades enxutas.',btnBook:'Agendar',btnView:'Ver portfólio',featured:'Trabalhos em destaque',work1:'Conteúdo visual com foco em clareza e conversa.',work2:'Direção de arte e copy simples para CTR.',work3:'Identidade consistente e escalável.',bookTitle:'Agendar atendimento',name:'Seu nome',date:'Data (dd/mm/aaaa)',time:'Horário',service:'Serviço',msg:'Mensagem / briefing',sendWhats:'Enviar via WhatsApp',sendMail:'Enviar por e-mail'},
     en:{home:'Home',portfolio:'Portfolio',book:'Book',badge:'I’m Laís — Graphic Designer',title1:'Graphic Designer',title2:'focused on Social Media and Branding',desc:'Clean design, strong typography, and results. I create carousels, posts, banners, and concise brand identities.',btnBook:'Book now',btnView:'See portfolio',featured:'Featured projects',work1:'Visual content with clarity and engagement.',work2:'Art direction and simple copy for CTR.',work3:'Consistent and scalable identity.',bookTitle:'Schedule a meeting',name:'Your name',date:'Date (yyyy-mm-dd)',time:'Time',service:'Service',msg:'Message / briefing',sendWhats:'Send via WhatsApp',sendMail:'Send by e-mail'}
   };
-
-  // Estados de idioma
-  let lang='pt';
-  const tEls=document.querySelectorAll('[data-i18n]');
-  const setLang=(l)=>{
-    lang=l;
-    tEls.forEach(el=>{ el.textContent=texts[l][el.dataset.i18n]; });
-    document.getElementById('btnPT').classList.toggle('active',l==='pt');
-    document.getElementById('btnEN').classList.toggle('active',l==='en');
-    // Ajusta placeholder conforme idioma
+  let lang = localStorage.getItem('lang') || 'pt';
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  function setLang(l){
+    lang = l;
+    i18nEls.forEach(el => { el.textContent = texts[l][el.dataset.i18n]; });
+    document.getElementById('btnPT').classList.toggle('active', l==='pt');
+    document.getElementById('btnEN').classList.toggle('active', l==='en');
+    // placeholders
     document.getElementById('nome').placeholder = (l==='en'?'Your name':'Seu nome');
     document.getElementById('data').placeholder = (l==='en'?'yyyy-mm-dd':'dd/mm/aaaa');
     document.getElementById('mensagem').placeholder = (l==='en'?'Tell me the essentials...':'Conte o essencial...');
-  };
-
-  // Botões PT/EN
+    localStorage.setItem('lang', l);
+    applyHeaderHeight();
+  }
   document.getElementById('btnPT').onclick=()=>setLang('pt');
   document.getElementById('btnEN').onclick=()=>setLang('en');
+  setLang(lang);
 
-  // Helpers
-  function encode(s){return encodeURIComponent(s).replace(/%20/g,'+');}
-
-  // Monta assunto/corpo de acordo com o idioma atual
+  /* Helpers */
+  function enc(s){return encodeURIComponent(s).replace(/%20/g,'+');}
   function montarMensagem(){
-    const nome=document.getElementById('nome').value.trim(),
-          data=document.getElementById('data').value.trim(),
-          hora=document.getElementById('hora').value.trim(),
-          serv=document.getElementById('servico').value.trim(),
-          msg=document.getElementById('mensagem').value.trim();
-
+    const nome=document.getElementById('nome').value.trim();
+    const data=document.getElementById('data').value.trim();
+    const hora=document.getElementById('hora').value.trim();
+    const serv=document.getElementById('servico').value.trim();
+    const msg=document.getElementById('mensagem').value.trim();
     if(lang==='en'){
-      const corpo=`Hello Laís Vaz!\n\nI’d like to schedule a meeting.\n\nName: ${nome}\nDate: ${data}\nTime: ${hora}\nService: ${serv}\n\nMessage:\n${msg}\n\nSent from the website.`;
-      const assunto=`Booking — ${nome} — ${data} ${hora}`;
-      return {assunto, corpo};
+      const body=`Hello Laís Vaz!\n\nI’d like to schedule a meeting.\n\nName: ${nome}\nDate: ${data}\nTime: ${hora}\nService: ${serv}\n\nMessage:\n${msg}\n\nSent from the website.`;
+      const subj=`Booking — ${nome} — ${data} ${hora}`;
+      return {subj, body};
     }else{
-      const corpo=`Olá, Laís Vaz!\n\nGostaria de agendar um atendimento.\n\nNome: ${nome}\nData: ${data}\nHorário: ${hora}\nServiço: ${serv}\n\nMensagem:\n${msg}\n\nEnviado pelo site.`;
-      const assunto=`Agendamento — ${nome} — ${data} ${hora}`;
-      return {assunto, corpo};
+      const body=`Olá, Laís Vaz!\n\nGostaria de agendar um atendimento.\n\nNome: ${nome}\nData: ${data}\nHorário: ${hora}\nServiço: ${serv}\n\nMensagem:\n${msg}\n\nEnviado pelo site.`;
+      const subj=`Agendamento — ${nome} — ${data} ${hora}`;
+      return {subj, body};
     }
   }
 
-  // WhatsApp (envia no idioma atual)
-  document.getElementById('btnWhats').addEventListener('click', ()=>{
-    const {corpo}=montarMensagem();
-    window.open(`https://wa.me/559991712084?text=${encode(corpo)}`,'_blank');
-  });
+  /* Enviar por WhatsApp (em inglês se site estiver EN) */
+  document.getElementById('btnWhats').onclick=()=>{
+    const {body}=montarMensagem();
+    // número placeholder — troque se quiser enviar para outro
+    window.open(`https://wa.me/559991712084?text=${enc(body)}`,'_blank');
+  };
 
-  // E-mail sempre via Gmail (no idioma atual)
-  document.getElementById('btnMail').addEventListener('click', ()=>{
-    const {assunto, corpo}=montarMensagem();
-    const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=laisvazgoncalves18@gmail.com&su=${encode(assunto)}&body=${encode(corpo)}`;
+  /* Enviar por e-mail (abre Gmail compose) */
+  document.getElementById('btnMail').onclick=()=>{
+    const {subj,body}=montarMensagem();
+    const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=laisvazgoncalves18@gmail.com&su=${enc(subj)}&body=${enc(body)}`;
     window.open(gmail,'_blank');
-  });
-
-  // Idioma padrão ao carregar
-  setLang('pt');
+  };
 </script>
 </body>
 </html>
